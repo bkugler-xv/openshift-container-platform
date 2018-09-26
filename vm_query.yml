@@ -1,3 +1,4 @@
+---
 - name: Use Azure CLI to retrieve VM information
   shell: az vm list -g xvoscluster-lowbrow-rg
   delegate_to: localhost

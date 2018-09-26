@@ -9,7 +9,7 @@
   connection: local
   tasks:
     - name: Login to Azure CLI
-      command: az login --service-principal -u {{ client_id }} -p {{ secret }} --tenant {{ tenant }}
+      command: az login --service-principal -u {{ azure.client_id }} -p {{ azure.secret }} --tenant {{ azure.tenant }}
 
     - name: Use Azure CLI to retrieve VM information
       command: az vm list -g xvoscluster-lowbrow-rg

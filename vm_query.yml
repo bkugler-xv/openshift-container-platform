@@ -5,6 +5,7 @@
       client_id: '{{ lookup("env", "AZURE_CLIENT_ID") }}'
       secret: '{{ lookup("env", "AZURE_SECRET") }}'
       tenant: '{{ lookup("env", "AZURE_TENANT") }}'
+    template: "{{ lookup('file','azuredeploy.parameters.json')|from_json }}"
   hosts: 127.0.0.1
   connection: local
   tasks:
@@ -13,3 +14,15 @@
 
     - name: Use Azure CLI to retrieve VM information
       command: az vm list -g xvoscluster-lowbrow-rg
+
+    - name: Update parameters file
+      data: "{{ template }}"
+      pointer: "/parameters/adminUsername/value"
+      action: update
+      update:
+        - "xvocpadmin"
+      register: result
+
+    - name: Show results
+      debug:
+        var: result.result

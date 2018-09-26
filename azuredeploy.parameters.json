@@ -1,4 +1,4 @@
-﻿{
+{
 	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
 	"contentVersion": "1.0.0.0",
 	"parameters": {
@@ -6,40 +6,40 @@
 			"value": "https://raw.githubusercontent.com/Microsoft/openshift-container-platform/master"
 		},
 		"masterVmSize": {
-			"value": "Standard_E2s_v3"
+			"value": "Standard_DS2_v2"
 		},
 		"infraVmSize": {
-			"value": "Standard_D4s_v3"
+			"value": "Standard_DS2_v2"
 		},
 		"nodeVmSize": {
-			"value": "Standard_D4s_v3"
+			"value": "Standard_DS2_v2"
 		},
 		"cnsVmSize": {
-			"value": "Standard_E4s_v3"
+			"value": "Standard_DS4_v2"
 		},
 		"storageKind": {
-			"value": "changeme"
+			"value": "managed"
 		},
 		"openshiftClusterPrefix": {
-			"value": "changeme"
+			"value": "xvos"
 		},
 		"masterInstanceCount": {
-			"value": 3
+			"value": 1
 		},
 		"infraInstanceCount": {
-			"value": 3
+			"value": 1
 		},
 		"nodeInstanceCount": {
-			"value": 3
+			"value": 2
 		},
 		"dataDiskSize": {
 			"value": 128
 		},
 		"adminUsername": {
-			"value": "changeme"
+			"value": ""
 		},
 		"openshiftPassword": {
-			"value": "changeme"
+			"value": ""
 		},
 		"enableMetrics": {
 			"value": "false"
@@ -51,40 +51,40 @@
 			"value": "false"
 		},
 		"rhsmUsernameOrOrgId": {
-			"value": "changeme"
+			"value": "<PUT YOUR OWN STUFF HERE>"
 		},
 		"rhsmPasswordOrActivationKey": {
-			"value": "changeme"
+			"value": "<PUT YOUR OWN STUFF HERE>"
 		},
 		"rhsmPoolId": {
-			"value": "changeme"
+			"value": ""
 		},
 		"sshPublicKey": {
-			"value": "GEN-SSH-PUB-KEY"
+			"value": ""
 		},
 		"keyVaultResourceGroup": {
-			"value": "changeme"
+			"value": ""
 		},
 		"keyVaultName": {
-			"value": "changeme"
+			"value": ""
 		},
 		"keyVaultSecret": {
-			"value": "changeme"
+			"value": ""
 		},
 		"enableAzure": {
 			"value": "true"
 		},
 		"aadClientId": {
-			"value": "changeme"
+			"value": ""
 		},
 		"aadClientSecret": {
-			"value": "changeme"
+			"value": ""
 		},
 		"defaultSubDomainType": {
 			"value": "nipio"
 		},
 		"defaultSubDomain": {
-			"value": "changeme"
+			"value": "xvos"
 		},
 		"addressPrefix": {
 			"value": "10.0.0.0/14"

@@ -16,11 +16,12 @@
       command: az vm list -g xvoscluster-lowbrow-rg
 
     - name: Update parameters file
-      data: "{{ template }}"
-      pointer: "/parameters/adminUsername/value"
-      action: update
-      update:
-        - "xvocpadmin"
+      json_modify:
+        data: "{{ template }}"
+        pointer: "/parameters/adminUsername/value"
+        action: update
+        update:
+          - "xvocpadmin"
       register: result
 
     - name: Show results

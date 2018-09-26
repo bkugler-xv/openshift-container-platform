@@ -1,5 +1,10 @@
 ---
 - name: Run local
+  vars:
+    azure:
+      client_id: '{{ lookup("env", "AZURE_CLIENT_ID") }}'
+      secret: '{{ lookup("env", "AZURE_SECRET") }}'
+      tenant: '{{ lookup("env", "AZURE_TENANT") }}'
   hosts: 127.0.0.1
   connection: local
   tasks:

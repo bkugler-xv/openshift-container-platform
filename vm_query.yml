@@ -18,10 +18,10 @@
     - name: Update parameters file
       json_modify:
         data: "{{ template }}"
-        pointer: "/parameters/adminUsername/value"
+        pointer: "/parameters/adminUsername"
         action: update
         update:
-          - "xvocpadmin"
+          value: "xvocpadmin"
       register: result
 
     - name: Show results

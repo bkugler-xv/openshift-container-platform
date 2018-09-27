@@ -22,6 +22,7 @@
         action: update
         update:
           value: "{{ ocpadmin }}"
+      register: result
       set_fact:
         template: result.result
 

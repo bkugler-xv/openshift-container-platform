@@ -90,3 +90,9 @@
     - name: Show results
       debug:
         var: result.result
+
+    - name: Save parameters file
+      copy: content="{{ result.result }}" dest=azuredeploy.parameters.final
+
+    - name: Build Cluster
+      #command: az group deployment create --name ocpdeployment --template-file azuredeploy.json --parameters @azuredeploy.parameters.json --resource-group xvoscluster-lowbrow-rg --no-wait

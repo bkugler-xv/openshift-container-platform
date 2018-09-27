@@ -20,6 +20,17 @@
 		"storageKind": {
 			"value": "managed"
 		},
+		"osImageType": {
+			"value": "defaultgallery"
+		},
+		"marketplaceOsImage": {
+			"value": {
+				"publisher": "RedHat",
+				"offer": "RHEL",
+				"sku": "7-RAW",
+				"version": "latest"
+			}
+		},
 		"openshiftClusterPrefix": {
 			"value": "xvos"
 		},

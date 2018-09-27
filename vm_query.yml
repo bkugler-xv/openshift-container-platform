@@ -23,8 +23,6 @@
         update:
           value: "{{ ocpadmin }}"
       register: result
-      set_fact:
-        template: result.result
 
     - name: Update parameters file - openshiftPassword
       json_modify:
@@ -33,8 +31,7 @@
         action: update
         update:
           value: "{{ ocppassword }}"
-      set_fact:
-        template: result.result
+      register: result
 
     - name: Update parameters file - rhsmPoolId
       json_modify:
@@ -43,8 +40,7 @@
         action: update
         update:
           value: "{{ rhpoolID }}"
-      set_fact:
-        template: result.result
+      register: result
 
     - name: Update parameters file - sshPublicKey
       json_modify:

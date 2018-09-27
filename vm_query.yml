@@ -22,7 +22,8 @@
         action: update
         update:
           value: "{{ ocpadmin }}"
-      register: result
+      set_fact:
+        template: result.result
 
     - name: Update parameters file - openshiftPassword
       json_modify:
@@ -31,7 +32,8 @@
         action: update
         update:
           value: "{{ ocppassword }}"
-      register: result
+      set_fact:
+        template: result.result
 
     - name: Update parameters file - rhsmPoolId
       json_modify:
@@ -40,7 +42,8 @@
         action: update
         update:
           value: "{{ rhpoolID }}"
-      #register: template
+      set_fact:
+        template: result.result
 
     - name: Update parameters file - sshPublicKey
       json_modify:
@@ -49,7 +52,8 @@
         action: update
         update:
           value: "{{ pubKey }}"
-      #register: template
+      set_fact:
+        template: result.result
 
     - name: Update parameters file - keyVaultResourceGroup
       json_modify:
@@ -58,7 +62,8 @@
         action: update
         update:
           value: "{{ resGroup }}"
-      #register: template
+      set_fact:
+        template: result.result
 
     - name: Update parameters file - keyVaultName
       json_modify:
@@ -67,7 +72,8 @@
         action: update
         update:
           value: "{{ vaultName }}"
-      #register: template
+      set_fact:
+        template: result.result
 
     - name: Update parameters file - aadClientId
       json_modify:
@@ -76,7 +82,8 @@
         action: update
         update:
           value: "{{ azure.client_id }}"
-      #register: template
+      set_fact:
+        template: result.result
 
     - name: Update parameters file - aadClientSecret
       json_modify:
@@ -85,8 +92,9 @@
         action: update
         update:
           value: "{{ azure.secret }}"
-      register: template
+      set_fact:
+        template: result.result
 
     - name: Show results
       debug:
-        var: template.result
+        var: template

@@ -95,4 +95,7 @@
       copy: content="{{ result.result }}" dest=azuredeploy.parameters.final
 
     - name: Build Cluster
+      debug:
+        var: "{{ lookup('file','azuredeploy.parameters.final')|from_json }}"
+
       #command: az group deployment create --name ocpdeployment --template-file azuredeploy.json --parameters @azuredeploy.parameters.json --resource-group xvoscluster-lowbrow-rg --no-wait

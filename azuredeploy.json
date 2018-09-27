@@ -135,6 +135,28 @@
 				"description": "Number of OpenShift nodes"
 			}
 		},
+		"osImageType": {
+			"type": "string",
+			"defaultValue": "defaultgallery",
+			"allowedValues": [
+				"defaultgallery", "marketplace"
+			],
+			"metadata": {
+				"description": "OpenShift OS image type. 'defaultgallery' will use the on demand RHEL image. 'marketplace' allows you to define a third party marketplace image to use."
+			}
+		},
+		"marketplaceOsImage": {
+			"type": "object",
+			"defaultValue": {
+				"publisher": "redhat",
+				"offer": "rhel-byos",
+				"sku": "rhel-75",
+				"version": "latest"
+			},
+			"metadata": {
+				"description": "Enter the appropriate publisher, offer, sku and version values for the appropriate marketplace image you want to use."
+			}
+		},
 		"dataDiskSize": {
 			"type": "int",
 			"defaultValue": 64,

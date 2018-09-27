@@ -22,16 +22,16 @@
         action: update
         update:
           value: "{{ ocpadmin }}"
-      #register: template
+      register: result
 
     - name: Update parameters file - openshiftPassword
       json_modify:
-        data: "{{ template }}"
+        data: "{{ result.result }}"
         pointer: "/parameters/openshiftPassword"
         action: update
         update:
           value: "{{ ocppassword }}"
-      #register: template
+      register: result
 
     - name: Update parameters file - rhsmPoolId
       json_modify:

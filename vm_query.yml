@@ -44,7 +44,7 @@
 
     - name: Update parameters file - sshPublicKey
       json_modify:
-        data: "{{ v }}"
+        data: "{{ result.result }}"
         pointer: "/parameters/sshPublicKey"
         action: update
         update:
